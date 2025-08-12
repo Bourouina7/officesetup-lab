@@ -1,0 +1,11 @@
+# Netlify configuration for OfficeSetups Lab (Vite + React)
+
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# SPA routing: serve index.html for all paths
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

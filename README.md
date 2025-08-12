@@ -64,6 +64,33 @@ This project is built with:
 
 Simply open [Lovable](https://lovable.dev/projects/db7ade02-e265-4e52-a556-114e05290e7b) and click on Share -> Publish.
 
+---
+
+## النشر على Netlify (موصى به)
+
+اتّبع الخطوات التالية لنشر المشروع على Netlify:
+
+1) ربط المستودع (Git) مباشرةً على Netlify
+- سجّل الدخول إلى Netlify ثم اختر: Add new site → Import an existing project.
+- اختر المستودع الذي يحتوي على المشروع.
+- Build command: `npm run build`
+- Publish directory: `dist`
+- لا حاجة لمتغيرات بيئة.
+- أنشئ الموقع وسيقوم Netlify بعملية البناء التلقائي في كل دفع (push).
+
+2) النشر بالسحب والإفلات (Drag & Drop)
+- محليًا: `npm i && npm run build`
+- بعد الانتهاء، اسحب مجلد `dist` وأفلته في https://app.netlify.com/drop
+
+3) التوجيه لواجهات SPA
+- تمت إضافة `netlify.toml` و`public/_redirects` تلقائيًا لتمكين توجيه جميع المسارات إلى `index.html` (status 200).
+
+ملاحظات هامة
+- تم ضبط Vite ليستخدم مسارات نسبية في الإنتاج (`base: './'`) ليعمل على أي دومين.
+- جميع الروابط داخل التطبيق عميلة (client-side) باستخدام React Router، ولا يوجد أي backend.
+
+---
+
 ## Can I connect a custom domain to my Lovable project?
 
 Yes, you can!

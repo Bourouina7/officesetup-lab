@@ -52,6 +52,12 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				// Custom OfficeSetups Lab colors
+				'text-heading': 'hsl(var(--text-heading))',
+				'text-body': 'hsl(var(--text-body))',
+				'text-light': 'hsl(var(--text-light))',
+				'star-filled': 'hsl(var(--star-filled))',
+				'star-empty': 'hsl(var(--star-empty))',
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',

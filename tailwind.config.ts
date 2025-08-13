@@ -26,7 +26,8 @@ export default {
 				foreground: 'hsl(var(--foreground))',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))'
+					foreground: 'hsl(var(--primary-foreground))',
+					hover: 'hsl(var(--primary-hover))'
 				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
@@ -52,12 +53,23 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				// Professional status colors
+				success: 'hsl(var(--success))',
+				warning: 'hsl(var(--warning))',
 				// Custom OfficeSetups Lab colors
 				'text-heading': 'hsl(var(--text-heading))',
 				'text-body': 'hsl(var(--text-body))',
 				'text-light': 'hsl(var(--text-light))',
+				'text-muted': 'hsl(var(--text-muted))',
 				'star-filled': 'hsl(var(--star-filled))',
 				'star-empty': 'hsl(var(--star-empty))',
+				// Category colors
+				'category-chairs': 'hsl(var(--category-chairs))',
+				'category-desks': 'hsl(var(--category-desks))',
+				'category-monitors': 'hsl(var(--category-monitors))',
+				'category-lighting': 'hsl(var(--category-lighting))',
+				'category-storage': 'hsl(var(--category-storage))',
+				'category-accessories': 'hsl(var(--category-accessories))',
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -95,6 +107,13 @@ export default {
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out'
+			},
+			boxShadow: {
+				'card': 'var(--shadow-card)',
+				'card-hover': 'var(--shadow-card-hover)',
+				'sm': 'var(--shadow-sm)',
+				'lg': 'var(--shadow-lg)',
+				'xl': 'var(--shadow-xl)'
 			}
 		}
 	},

@@ -1,0 +1,397 @@
+/*
+Theme Name: OfficeSetups Lab
+Description: A modern, responsive WordPress theme for office equipment reviews and recommendations. Features advanced animations, interactive elements, and a clean professional design.
+Author: OfficeSetups Lab
+Version: 1.0.0
+License: GPL v2 or later
+Text Domain: officesetups-lab
+Tags: responsive, modern, business, reviews, ecommerce, clean, professional
+*/
+
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Primary Colors */
+  --primary: 220 70% 50%;
+  --primary-foreground: 0 0% 98%;
+  --primary-variant: 220 70% 60%;
+  --primary-glow: 220 70% 70%;
+
+  /* Secondary Colors */
+  --secondary: 210 40% 96%;
+  --secondary-foreground: 222 84% 4.9%;
+
+  /* Accent Colors */
+  --accent: 210 40% 96%;
+  --accent-foreground: 222 84% 4.9%;
+
+  /* Background Colors */
+  --background: 0 0% 100%;
+  --background-alt: 210 20% 98%;
+  --background-card: 0 0% 100%;
+
+  /* Text Colors */
+  --text-heading: 222 84% 4.9%;
+  --text-body: 215 16% 47%;
+  --text-light: 215 20% 65%;
+  --text-accent: 220 70% 50%;
+
+  /* UI Colors */
+  --border: 214 32% 91%;
+  --input: 214 32% 91%;
+  --ring: 222 84% 4.9%;
+
+  /* Interactive States */
+  --hover-overlay: 0 0% 0% / 0.05;
+  --focus-ring: 220 70% 50% / 0.2;
+
+  /* Star Rating Colors */
+  --star-filled: 45 100% 51%;
+  --star-empty: 210 20% 85%;
+
+  /* Shadows */
+  --shadow-card: 0 1px 3px 0 hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
+  --shadow-card-hover: 0 10px 15px -3px hsl(0 0% 0% / 0.1), 0 4px 6px -4px hsl(0 0% 0% / 0.1);
+  --shadow-elegant: 0 10px 30px -10px hsl(220 70% 50% / 0.3);
+  --shadow-glow: 0 0 40px hsl(220 70% 70% / 0.4);
+
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, hsl(220 70% 50%), hsl(220 70% 60%));
+  --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%), hsl(210 20% 98%));
+  --gradient-hero: linear-gradient(135deg, hsl(220 70% 50% / 0.1), hsl(220 70% 60% / 0.1));
+
+  /* Animations */
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+  color: hsl(var(--text-body));
+  background-color: hsl(var(--background));
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: hsl(var(--text-heading));
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.25rem; }
+
+p { margin-bottom: 1rem; }
+
+a {
+  color: hsl(var(--text-accent));
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+
+a:hover {
+  color: hsl(var(--primary));
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Header Styles */
+.site-header {
+  background: hsl(var(--background) / 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid hsl(var(--border));
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.site-logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: hsl(var(--text-heading));
+}
+
+.main-nav ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.main-nav a {
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: var(--transition-smooth);
+}
+
+.main-nav a:hover,
+.main-nav a.current {
+  background: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+}
+
+/* Hero Section */
+.hero-section {
+  background: var(--gradient-hero);
+  padding: 4rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="hsl(220 70% 50% / 0.1)"/><circle cx="80" cy="80" r="2" fill="hsl(220 70% 50% / 0.1)"/></svg>');
+  animation: float 20s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-content p {
+  font-size: 1.25rem;
+  color: hsl(var(--text-light));
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Button Styles */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  transition: var(--transition-smooth);
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+  box-shadow: var(--shadow-card);
+}
+
+.btn-primary:hover {
+  background: hsl(var(--primary-variant));
+  box-shadow: var(--shadow-elegant);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: hsl(var(--text-heading));
+  border: 2px solid hsl(var(--border));
+}
+
+.btn-secondary:hover {
+  background: hsl(var(--secondary));
+  border-color: hsl(var(--primary));
+}
+
+/* Card Styles */
+.card {
+  background: hsl(var(--background-card));
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: var(--shadow-card);
+  transition: var(--transition-smooth);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-4px);
+}
+
+/* Grid Layouts */
+.grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.grid-2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+.grid-3 { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+.grid-4 { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+
+/* Star Rating */
+.star-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.star {
+  width: 1.25rem;
+  height: 1.25rem;
+  fill: hsl(var(--star-empty));
+  color: hsl(var(--star-empty));
+}
+
+.star.filled {
+  fill: hsl(var(--star-filled));
+  color: hsl(var(--star-filled));
+}
+
+/* Stats Section */
+.stats-section {
+  background: var(--gradient-subtle);
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.stat-item {
+  background: hsl(var(--background-card));
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: var(--shadow-card);
+}
+
+.stat-number {
+  font-size: 3rem;
+  font-weight: 700;
+  color: hsl(var(--primary));
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: hsl(var(--text-heading));
+  margin-bottom: 0.5rem;
+}
+
+.stat-description {
+  color: hsl(var(--text-light));
+  font-size: 0.875rem;
+}
+
+/* Footer */
+.site-footer {
+  background: hsl(var(--text-heading));
+  color: hsl(var(--primary-foreground));
+  padding: 3rem 0 1rem;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-section h3 {
+  color: hsl(var(--primary-foreground));
+  margin-bottom: 1rem;
+}
+
+.footer-section a {
+  color: hsl(var(--text-light));
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.footer-section a:hover {
+  color: hsl(var(--primary-glow));
+}
+
+.footer-bottom {
+  border-top: 1px solid hsl(var(--border));
+  padding-top: 1rem;
+  text-align: center;
+  color: hsl(var(--text-light));
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-content h1 { font-size: 2.5rem; }
+  .hero-content p { font-size: 1rem; }
+  .container { padding: 0 1rem; }
+  .main-nav ul { flex-direction: column; gap: 1rem; }
+  .header-content { flex-direction: column; gap: 1rem; }
+}
+
+/* Animation Classes */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-up {
+  transform: translateY(100px);
+  opacity: 0;
+  animation: slideUp 0.8s ease-out forwards;
+}
+
+@keyframes slideUp {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Utility Classes */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+.mb-0 { margin-bottom: 0; }
+.mb-1 { margin-bottom: 1rem; }
+.mb-2 { margin-bottom: 2rem; }
+.mt-0 { margin-top: 0; }
+.mt-1 { margin-top: 1rem; }
+.mt-2 { margin-top: 2rem; }
+.py-4 { padding: 4rem 0; }
+.py-2 { padding: 2rem 0; }

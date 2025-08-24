@@ -1,0 +1,20 @@
+
+You sent
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: 'public/images/uploads'
+public_folder: '/images/uploads'
+
+collections:
+  - name: 'posts'
+    label: 'المقالات'
+    folder: '_posts'
+    create: true
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    fields:
+      - { label: 'العنوان', name: 'title', widget: 'string' }
+      - { label: 'تاريخ النشر', name: 'publishDate', widget: 'datetime' }
+      - { label: 'صورة المقال', name: 'thumbnail', widget: 'image', required: false }
+      - { label: 'المحتوى', name: 'body', widget: 'markdown' }
